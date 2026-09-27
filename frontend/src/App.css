@@ -1,0 +1,417 @@
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* ---------- Wallet bar ---------- */
+
+.wallet-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wallet-bar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet-bar__seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--seal);
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.wallet-bar__name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.wallet-bar__status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wallet-bar__connected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--ink-raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.wallet-bar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--seal-bright);
+}
+
+.wallet-bar__address {
+  color: var(--text-on-ink);
+}
+
+.wallet-bar__install-link {
+  font-size: 14px;
+  color: var(--seal-bright);
+  text-decoration: underline;
+}
+
+.wallet-bar__error {
+  width: 100%;
+  margin: 0;
+  font-size: 13px;
+  color: var(--rust);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--seal);
+  color: var(--ink);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--text-on-paper);
+  border-color: currentColor;
+}
+
+.btn--warn {
+  background: var(--rust);
+  color: var(--paper);
+}
+
+.btn--block {
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 72px 0 56px;
+  max-width: 640px;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--seal-bright);
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  color: var(--text-on-ink);
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-on-ink-dim);
+  margin: 0;
+}
+
+/* ---------- Panels (paper cards) ---------- */
+
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--paper);
+  color: var(--text-on-paper);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.5);
+}
+
+.panel__eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--seal);
+  margin-bottom: 10px;
+}
+
+.panel__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.panel__description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-on-paper-dim);
+  margin: 0 0 24px;
+}
+
+.panel__hint {
+  font-size: 13px;
+  color: var(--text-on-paper-dim);
+  margin: 10px 0 0;
+}
+
+.panel__hint--warn {
+  color: var(--rust);
+}
+
+/* ---------- Dropzone ---------- */
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1.5px dashed rgba(27, 36, 54, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--paper-dim);
+  transition: border-color 0.15s ease;
+}
+
+.dropzone:hover {
+  border-color: var(--seal);
+}
+
+.dropzone__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.dropzone__icon {
+  font-size: 20px;
+  color: var(--seal);
+}
+
+.dropzone__text {
+  font-size: 14px;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Hash display ---------- */
+
+.hash-display {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--ink);
+  border-radius: 8px;
+}
+
+.hash-display__label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-on-ink-dim);
+  margin-bottom: 6px;
+}
+
+.hash-display__value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--seal-bright);
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+/* ---------- Results ---------- */
+
+.result {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  border-left: 3px solid;
+}
+
+.result--success {
+  background: rgba(79, 140, 124, 0.12);
+  border-color: var(--seal);
+}
+
+.result--warn {
+  background: rgba(195, 112, 63, 0.12);
+  border-color: var(--rust);
+}
+
+.result--error {
+  background: rgba(195, 79, 63, 0.12);
+  border-color: #C34F3F;
+}
+
+.result--neutral {
+  background: rgba(27, 36, 54, 0.06);
+  border-color: rgba(27, 36, 54, 0.3);
+}
+
+.result__title {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 6px;
+}
+
+.result__body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-on-paper-dim);
+  margin: 0;
+}
+
+.result__link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--seal);
+}
+
+.result__meta {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+.result__meta dt {
+  color: var(--text-on-paper-dim);
+  margin-top: 8px;
+}
+
+.result__meta dd {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  word-break: break-all;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--text-on-ink-dim);
+}
+/* ---------- Fraud badge (append to App.css) ---------- */
+
+.fraud-badge {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border-left: 3px solid;
+}
+
+.fraud-badge__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fraud-badge__label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.fraud-badge__percent {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-on-paper-dim);
+}
+
+.fraud-badge__warning {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-on-paper-dim);
+}
+
+.fraud-badge--low {
+  background: rgba(79, 140, 124, 0.12);
+  border-color: var(--seal);
+}
+
+.fraud-badge--medium {
+  background: rgba(195, 112, 63, 0.1);
+  border-color: var(--rust);
+}
+
+.fraud-badge--high {
+  background: rgba(195, 79, 63, 0.14);
+  border-color: #C34F3F;
+}
+
+.fraud-badge--unavailable {
+  background: rgba(27, 36, 54, 0.06);
+  color: var(--text-on-paper-dim);
+  font-size: 12px;
+  border-color: rgba(27, 36, 54, 0.2);
+}

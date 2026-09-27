@@ -1,0 +1,24 @@
+# Node
+node_modules/
+dist/
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+backend/package/
+fraud-detection/data/
+fraud-detection/models/
+
+# Secrets - NEVER commit these
+.env
+*.zip
+
+# Hardhat
+artifacts/
+cache/
+# Frontend build output
+frontend/frontend-build/
+# OS
+.DS_Store
+Thumbs.db
